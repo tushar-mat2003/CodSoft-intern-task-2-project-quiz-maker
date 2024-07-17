@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Maker</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  
+  <div id="welcome">
+    <span><h3>Welcome to the Quiz!</h3></span>
+  </div>
+  <div id="welcome2">
+    <span class="welcome-text"><h1> <br><br> <span style="color: rgb(255, 238, 0);">Get ready to test your knowledge!</span></h1></span>
+  </div>
+
+  <div id="app">
+    <div id="register" class="hidden">
+      <h2 id="reg">Register</h2>
+      <form id="registerForm">
+        <label>Username</label>
+        <input type="text" id="registerUsername" required>
+        <label>Email</label>
+        <input type="email" id="registerEmail" required>
+        <label>Password</label>
+        <input type="password" id="registerPassword" required>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account ? <a  href="#" onclick="showLogin()">Login Here</a></p>
+    </div>
+
+    <div id="login" class="hidden">
+      <h2 id="reg">Login</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required>
+        <label>Password</label>
+        <input type="password" id="loginPassword" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account ? <a href="#" onclick="showRegister()">Register Here</a></p>
+    </div>
+
+    <div id="dashboard" class="hidden">
+      <h2>Dashboard</h2>
+      <button onclick="showCreateQuiz()">Create Quiz</button>
+      <button onclick="showTakeQuiz()">Take Quiz</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="createQuiz" class="hidden">
+      <h2>Create Quiz</h2>
+      <form id="createQuizForm">
+        <label>Title</label>
+        <input type="text" id="quizTitle" required>
+        <div id="questionsContainer">
+          <div class="question">
+            <label>Question</label>
+            <input type="text" class="questionText" required>
+            <label>Answer 1</label>
+            <input type="text" class="answerText" required>
+            <input type="radio" name="correctAnswer0" value="0" required>
+            <label>Answer 2</label>
+            <input type="text" class="answerText" required>
+            <input type="radio" name="correctAnswer0" value="1" required>
+            <label>Answer 3</label>
+            <input type="text" class="answerText" required>
+            <input type="radio" name="correctAnswer0" value="2" required>
+            <label>Answer 4</label>
+            <input type="text" class="answerText" required>
+            <input type="radio" name="correctAnswer0" value="3" required>
+          </div>
+        </div>
+        <button type="button" onclick="addQuestion()">Add Question</button>
+        <button type="submit">Create Quiz</button>
+      </form>
+    </div>
+
+    <div id="takeQuiz" class="hidden">
+      <h2>Take Quiz</h2>
+      <form id="quizListForm">
+        <label>Select Quiz</label>
+        <select id="quizList"></select>
+        <button type="submit">Start Quiz</button>
+      </form>
+      <div id="quizContainer" class="hidden">
+        <form id="quizForm"></form>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
